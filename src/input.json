@@ -1,0 +1,363 @@
+{
+  "id": "case_form",
+  "type": "form",
+  "children": [
+    {
+      "id": "patientData",
+      "type": "field_group",
+      "menuGroup": true,
+      "variable": "data.case",
+      "children": [
+        {
+          "id": "patientDataGeneral",
+          "type": "field_group",
+          "menuLeaf": true,
+          "children": [
+            {
+              "id": "generalCondition",
+              "type": "enum",
+              "variable": "generalCondition",
+              "enumType": "GeneralCondition"
+            },
+            {
+              "id": "heightAndWeightComp",
+              "type": "composite",
+              "children": [
+                {
+                  "id": "1_3_body_height_8",
+                  "type": "integer",
+                  "variable": "bodyHeight"
+                },
+                {
+                  "id": "1_3_weight_9",
+                  "type": "decimal",
+                  "variable": "weight"
+                },
+                {
+                  "id": "1_3_bmi_1",
+                  "type": "output",
+                  "variable": "bodyMassIndex"
+                },
+                {
+                  "id": "1_3_bsa_1",
+                  "type": "output",
+                  "variable": "bodySurfaceArea"
+                },
+                {
+                  "id": "1_3_weight_fixed_12",
+                  "type": "radiobox",
+                  "variable": "weightFixed",
+                  "options": [
+                    {
+                      "id": 1,
+                      "text": "Yes",
+                      "value": "y"
+                    },
+                    {
+                      "id": 2,
+                      "text": "No",
+                      "value": "n"
+                    },
+                    {
+                      "id": 3,
+                      "text": "Unknown",
+                      "value": "u"
+                    }
+                  ]
+                },
+                {
+                  "type": "placeholder"
+                },
+                {
+                  "id": "1_3_loss_of_weight_11",
+                  "type": "decimal",
+                  "variable": "lossOfWeight"
+                },
+                {
+                  "id": "1_3_weight_month_loss_13",
+                  "type": "integer",
+                  "variable": "lossOfWeightInMonth"
+                },
+                {
+                  "id": "1_3_gain_of_weight_10",
+                  "type": "integer",
+                  "variable": "gainOfWeight"
+                },
+                {
+                  "id": "1_3_weight_month_count_13",
+                  "type": "integer",
+                  "variable": "gainOfWeightInMonth"
+                },
+                {
+                  "id": "1_3_comment_14",
+                  "type": "comment",
+                  "variable": "pdGeneralComment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "patientDataLifestyle",
+          "type": "field_group",
+          "menuLeaf": true,
+          "children": [
+            {
+              "id": "lifestyleComp",
+              "type": "composite",
+              "children": [
+                {
+                  "id": "1_4_vegetarian_33",
+                  "type": "radiobox",
+                  "variable": "vegetarian",
+                  "options": [
+                    {
+                      "id": 1,
+                      "text": "Yes",
+                      "value": "y"
+                    },
+                    {
+                      "id": 2,
+                      "text": "No",
+                      "value": "n"
+                    },
+                    {
+                      "id": 3,
+                      "text": "Unknown",
+                      "value": "u"
+                    }
+                  ]
+                },
+                {
+                  "id": "1_4_vegetarian_since_34",
+                  "type": "year",
+                  "variable": "vegetarianSince"
+                },
+                {
+                  "id": "1_4_meat_consumption_freq_35",
+                  "type": "integer",
+                  "variable": "meatConsumptionFreq"
+                },
+                {
+                  "id": "2_8_fruit_vegetable_91",
+                  "type": "radiobox",
+                  "variable": "fruitVegetable",
+                  "options": [
+                    {
+                      "id": 1,
+                      "text": "Yes",
+                      "value": "y"
+                    },
+                    {
+                      "id": 2,
+                      "text": "No",
+                      "value": "n"
+                    },
+                    {
+                      "id": 3,
+                      "text": "Unknown",
+                      "value": "u"
+                    }
+                  ]
+                },
+                {
+                  "id": "2_8_fruit_vegetable_freq_90",
+                  "type": "integer",
+                  "variable": "fruitVegetableFreq"
+                },
+                {
+                  "id": "1_4_comment_36",
+                  "type": "comment",
+                  "variable": "pdLifestyleComment"
+                },
+                {
+                  "id": "sleep",
+                  "type": "enum",
+                  "variable": "sleep",
+                  "enumType": "Sleep"
+                },
+                {
+                  "id": "appetite",
+                  "type": "enum",
+                  "variable": "appetite",
+                  "enumType": "Appetite"
+                },
+                {
+                  "id": "aversionEnum",
+                  "type": "multi_enum",
+                  "variable": "aversions",
+                  "enumType": "AversionType"
+                }
+              ]
+            },
+            {
+              "id": "physicalActivitiesComp",
+              "type": "composite",
+              "children": [
+                {
+                  "id": "2_1_physical_activities_78",
+                  "type": "radiobox",
+                  "variable": "physicalActivities",
+                  "options": [
+                    {
+                      "id": 1,
+                      "text": "Yes",
+                      "value": "y"
+                    },
+                    {
+                      "id": 2,
+                      "text": "No",
+                      "value": "n"
+                    },
+                    {
+                      "id": 3,
+                      "text": "Unknown",
+                      "value": "u"
+                    }
+                  ]
+                },
+                {
+                  "id": "physical_activities-list",
+                  "variable": "physicalactivities",
+                  "type": "list",
+                  "children": [
+                    {
+                      "id": "physical_activity-composite",
+                      "type": "composite",
+                      "children": [
+                        {
+                          "id": "physical_activity_type",
+                          "type": "enum",
+                          "variable": "type",
+                          "enumType": "PhysicalActivities"
+                        },
+                        {
+                          "id": "2_1_physical_activity_frq_1_80",
+                          "type": "enum",
+                          "variable": "frequency",
+                          "enumType": "PhysicalActivitiesFrequency"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2_1_comment",
+                  "type": "comment",
+                  "variable": "pdPhysActComment"
+                }
+              ]
+            },
+            {
+              "id": "patientDataAddictiveDrugs",
+              "type": "composite",
+              "children": [
+                {
+                  "id": "addictedDrugList",
+                  "type": "list",
+                  "variable": "addictiveDrugs",
+                  "children": [
+                    {
+                      "id": "addictedDrugComp",
+                      "type": "composite",
+                      "children": [
+                        {
+                          "id": "4_2_addictive_drug_type_1_111",
+                          "type": "enum",
+                          "variable": "type",
+                          "enumType": "AddictiveDrugs"
+                        },
+                        {
+                          "id": "4_2_addictive_drug_freq_1_113",
+                          "type": "enum",
+                          "variable": "frequency",
+                          "enumType": "AddictiveDrugsFrequency"
+                        },
+                        {
+                          "id": "4_2_addictive_drug_dose_1_112",
+                          "type": "integer",
+                          "variable": "dose"
+                        },
+                        {
+                          "id": "4_2_addictive_drug_unit_1_113",
+                          "type": "enum",
+                          "variable": "unit",
+                          "enumType": "AddictiveDrugsUnit"
+                        },
+                        {
+                          "id": "4_2_addictive_drug_from_1_114",
+                          "type": "month",
+                          "variable": "fromDate"
+                        },
+                        {
+                          "id": "4_2_addictive_drug_to_1_115",
+                          "type": "month",
+                          "variable": "toDate"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "4_2_comment",
+                  "type": "comment",
+                  "variable": "pdAddDrugComment"
+                }
+              ]
+            },
+            {
+              "id": "patientDataToxicRisks",
+              "type": "composite",
+              "children": [
+                {
+                  "id": "toxicRiskComp",
+                  "type": "composite",
+                  "children": [
+                    {
+                      "id": "2_7_passive_smoker_89",
+                      "type": "radiobox",
+                      "variable": "passiveSmoker",
+                      "options": [
+                        {
+                          "id": 1,
+                          "text": "Yes",
+                          "value": "y"
+                        },
+                        {
+                          "id": 2,
+                          "text": "No",
+                          "value": "n"
+                        },
+                        {
+                          "id": 3,
+                          "text": "Unknown",
+                          "value": "u"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "2_10_pack_years_28",
+                      "type": "integer",
+                      "variable": "packYears"
+                    },
+                    {
+                      "id": "toxic-list",
+                      "type": "multi_enum",
+                      "variable": "toxicriskfactors",
+                      "enumType": "ToxicRiskFactor"
+                    },
+                    {
+                      "id": "2_7_comment",
+                      "type": "comment",
+                      "variable": "pdToxicRisksComment"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
